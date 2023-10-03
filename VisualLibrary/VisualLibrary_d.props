@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <VisualLibraryPath>D:\Project\Visualization\VisualLibrary</VisualLibraryPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_PropertySheetDisplayName>VisualLibrary_d</_PropertySheetDisplayName>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings">
+    <QtModules>core;gui;charts</QtModules>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(VisualLibraryPath)\FileModel;$(VisualLibraryPath)\ViewModel;$(VisualLibraryPath)\View;$(VisualLibraryPath);$(VisualLibraryPath)\Ribbon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>VisualLibrary_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(VisualLibraryPath)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="VisualLibraryPath">
+      <Value>$(VisualLibraryPath)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

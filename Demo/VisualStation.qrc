@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/VisualStation">
+        <file>NPU_rLogal.png</file>
+        <file>Demo.ico</file>
+    </qresource>
+</RCC>

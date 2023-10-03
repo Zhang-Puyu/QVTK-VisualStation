@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+***************************************************************************************************
+ Copyright (C) 2023 The Qt Company Ltd.
+ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+***************************************************************************************************
+-->
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1D2095CE-B86D-4543-A19D-9F261DE7AB54}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>core;network;gui;widgets;charts</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtBuildConfig>release</QtBuildConfig>
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>core;network;gui;widgets;charts</QtModules>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="VisualLibrary_d.props" />
+    <Import Project="C:\Users\ZhangPuyu\AppData\Local\QtMsBuild\Qt.props" />
+    <Import Project="..\..\..\Library\VTK-8.2.0_d.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="VisualLibrary.props" />
+    <Import Project="C:\Users\ZhangPuyu\AppData\Local\QtMsBuild\Qt.props" />
+    <Import Project="..\..\..\Library\VTK-8.2.0.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <TargetName>$(ProjectName)_d</TargetName>
+    <OutDir>$(VisualLibraryPath)\lib\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutDir>$(VisualLibraryPath)\lib\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>VISUALLIBRARY_LIB;BUILD_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>VISUALLIBRARY_LIB;BUILD_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <QtMoc Include="Ribbon\ribbon.h" />
+    <QtMoc Include="Ribbon\ribbonbuttongroup.h" />
+    <QtMoc Include="Ribbon\ribbontabcontent.h" />
+    <QtMoc Include="View\FlexibleChartView.h" />
+    <QtMoc Include="View\InteractorStyle.h" />
+    <QtMoc Include="View\ViewWidget_2D.h" />
+    <QtMoc Include="View\ViewWidget_3D.h" />
+    <QtMoc Include="ViewModel\ViewModel_2D.h" />
+    <QtMoc Include="ViewModel\PointsModel.h" />
+    <QtMoc Include="ViewModel\ScatterModel.h" />
+    <QtMoc Include="ViewModel\SolidModel.h" />
+    <QtMoc Include="ViewModel\ToolpathModel.h" />
+    <QtMoc Include="ViewModel\ViewModel_3D.h" />
+    <ClInclude Include="FileModel\FileModel.h" />
+    <QtMoc Include="FileModel\FilePathTcpWatcher.h" />
+    <ClInclude Include="FileModel\FileWatcher.h" />
+    <ClInclude Include="visuallibrary_global.h" />
+    <ClCompile Include="FileModel\FileModel.cpp" />
+    <ClCompile Include="FileModel\FilePathTcpWatcher.cpp" />
+    <ClCompile Include="FileModel\FileWatcher.cpp" />
+    <ClCompile Include="Ribbon\ribbon.cpp" />
+    <ClCompile Include="Ribbon\ribbonbuttongroup.cpp" />
+    <ClCompile Include="Ribbon\ribbontabcontent.cpp" />
+    <ClCompile Include="ViewModel\ViewModel_2D.cpp" />
+    <ClCompile Include="ViewModel\PointsModel.cpp" />
+    <ClCompile Include="ViewModel\ScatterModel.cpp" />
+    <ClCompile Include="ViewModel\SolidModel.cpp" />
+    <ClCompile Include="ViewModel\ToolpathModel.cpp" />
+    <ClCompile Include="ViewModel\ViewModel_3D.cpp" />
+    <ClCompile Include="View\FlexibleChartView.cpp" />
+    <ClCompile Include="View\InteractorStyle.cpp" />
+    <ClCompile Include="View\ViewWidget_2D.cpp" />
+    <ClCompile Include="View\ViewWidget_3D.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Ribbon\ribbonbuttongroup.ui" />
+    <QtUic Include="Ribbon\ribbontabcontent.ui" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

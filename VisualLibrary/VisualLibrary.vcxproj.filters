@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Ribbon">
+      <UniqueIdentifier>{ca89b6b1-9e22-4250-8650-7b1c5024580e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{e093da8a-bd5a-48d1-9c3f-d3122fbd474d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ViewModel">
+      <UniqueIdentifier>{e07979e8-587e-4251-8943-41ab71d2a7da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ViewModel\2D">
+      <UniqueIdentifier>{a4e22e77-d535-426f-93e4-735b8b7ca81b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ViewModel\3D">
+      <UniqueIdentifier>{415c81c5-d830-445c-91f3-bbc44512c595}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileOperator">
+      <UniqueIdentifier>{af294954-8579-410f-8e5c-cef2ddb0b1e1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Ribbon\ribbon.cpp">
+      <Filter>Ribbon</Filter>
+    </ClCompile>
+    <ClCompile Include="Ribbon\ribbonbuttongroup.cpp">
+      <Filter>Ribbon</Filter>
+    </ClCompile>
+    <ClCompile Include="Ribbon\ribbontabcontent.cpp">
+      <Filter>Ribbon</Filter>
+    </ClCompile>
+    <ClCompile Include="View\FlexibleChartView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="View\InteractorStyle.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="View\ViewWidget_2D.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="View\ViewWidget_3D.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="FileModel\FileModel.cpp">
+      <Filter>FileOperator</Filter>
+    </ClCompile>
+    <ClCompile Include="FileModel\FileWatcher.cpp">
+      <Filter>FileOperator</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewModel\ViewModel_2D.cpp">
+      <Filter>ViewModel\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewModel\ScatterModel.cpp">
+      <Filter>ViewModel\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewModel\PointsModel.cpp">
+      <Filter>ViewModel\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewModel\SolidModel.cpp">
+      <Filter>ViewModel\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewModel\ToolpathModel.cpp">
+      <Filter>ViewModel\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewModel\ViewModel_3D.cpp">
+      <Filter>ViewModel\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="FileModel\FilePathTcpWatcher.cpp">
+      <Filter>FileOperator</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Ribbon\ribbon.h">
+      <Filter>Ribbon</Filter>
+    </QtMoc>
+    <QtMoc Include="Ribbon\ribbonbuttongroup.h">
+      <Filter>Ribbon</Filter>
+    </QtMoc>
+    <QtMoc Include="Ribbon\ribbontabcontent.h">
+      <Filter>Ribbon</Filter>
+    </QtMoc>
+    <QtMoc Include="View\FlexibleChartView.h">
+      <Filter>View</Filter>
+    </QtMoc>
+    <QtMoc Include="View\InteractorStyle.h">
+      <Filter>View</Filter>
+    </QtMoc>
+    <QtMoc Include="View\ViewWidget_2D.h">
+      <Filter>View</Filter>
+    </QtMoc>
+    <QtMoc Include="View\ViewWidget_3D.h">
+      <Filter>View</Filter>
+    </QtMoc>
+    <QtMoc Include="ViewModel\ViewModel_2D.h">
+      <Filter>ViewModel\2D</Filter>
+    </QtMoc>
+    <QtMoc Include="ViewModel\ScatterModel.h">
+      <Filter>ViewModel\2D</Filter>
+    </QtMoc>
+    <QtMoc Include="ViewModel\PointsModel.h">
+      <Filter>ViewModel\3D</Filter>
+    </QtMoc>
+    <QtMoc Include="ViewModel\SolidModel.h">
+      <Filter>ViewModel\3D</Filter>
+    </QtMoc>
+    <QtMoc Include="ViewModel\ToolpathModel.h">
+      <Filter>ViewModel\3D</Filter>
+    </QtMoc>
+    <QtMoc Include="ViewModel\ViewModel_3D.h">
+      <Filter>ViewModel\3D</Filter>
+    </QtMoc>
+    <QtMoc Include="FileModel\FilePathTcpWatcher.h">
+      <Filter>FileOperator</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Ribbon\ribbonbuttongroup.ui">
+      <Filter>Ribbon</Filter>
+    </QtUic>
+    <QtUic Include="Ribbon\ribbontabcontent.ui">
+      <Filter>Ribbon</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="visuallibrary_global.h" />
+    <ClInclude Include="FileModel\FileModel.h">
+      <Filter>FileOperator</Filter>
+    </ClInclude>
+    <ClInclude Include="FileModel\FileWatcher.h">
+      <Filter>FileOperator</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
